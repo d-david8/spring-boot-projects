@@ -6,11 +6,9 @@ This api manages operations related to student entities using a PostgreSQL datab
 
 Creates a new student.
 
-URL: `/api/entityClassMapping/students`
-
-Method: `POST`
-
-Request Body:
+- URL: `/api/entityClassMapping/students`
+- Method: `POST`
+- Request Body:
 
 ```json
 {
@@ -20,9 +18,7 @@ Request Body:
 }
 ```
 
-Success Response:
-
-Code: `200`
+- Success Response: `200`
 
 ```json
 {
@@ -33,19 +29,15 @@ Code: `200`
 }
 ```
 
-Error Response:
-
-Code: `400 BAD REQUEST`
+- Error Response: `400 BAD REQUEST`
 
 ## 2. Update Student
 
 Updates an existing student by ID.
 
-URL: `/api/entityClassMapping/students/{id}`
-
-Method: `PUT`
-
-Request Body:
+- URL: `/api/entityClassMapping/students/{id}`
+- Method: `PUT`
+- Request Body:
 
 ```json
 {
@@ -56,9 +48,7 @@ Request Body:
 }
 ```
 
-Success Response:
-
-Code: 200
+- Success Response: Code: `200`
 
 ```json
 {
@@ -69,23 +59,15 @@ Code: 200
 }
 ```
 
-Error Response:
-
-Code:   `400 BAD REQUEST` `404 NOT FOUND`
+- Error Response: `400 BAD REQUEST` `404 NOT FOUND`
 
 ## 3. Delete Student
 
 Deletes an existing student by ID.
 
-URL: `/api/entityClassMapping/students/{id}`
-
-Method: `DELETE`
-
-Success Response:
-
-Code: 200
-
-Content:
+- URL: `/api/entityClassMapping/students/{id}`
+- Method: `DELETE`
+- Success Response: `200`
 
 ```json
 {
@@ -96,26 +78,18 @@ Content:
 }
 ```
 
-Error Response:
-
-Code: `404 NOT FOUND`
+- Error Response: `404 NOT FOUND`
 
 ## 4. Find Student by Name
 
 Finds students by their first name or/and last name.
 
-URL: `/api/entityClassMapping/students`
-
-Method: `GET`
-
-Query Parameters:
-
-`firstName` (optional): First name of the student.
-`lastName`  (optional): Last name of the student.
-
-Success Response:
-
-Code: 200
+- URL: `/api/entityClassMapping/students`
+- Method: `GET`
+- Query Parameters:
+    - `firstName` (optional): First name of the student.
+    - `lastName`  (optional): Last name of the student.
+- Success Response: `200`
 
 ```json
 [
@@ -136,17 +110,11 @@ Code: 200
 
 ## 5. Find Student by Email
 
-URL `/api/entityClassMapping/students/getStudentByEmail`
-
-Method: `GET`
-
-Query Parameters:
-
-`email`: Email address of the student.
-
-Success Response:
-
-Code: 200
+- URL `/api/entityClassMapping/students/getStudentByEmail`
+- Method: `GET`
+- Query Parameters:
+    - `email`: Email address of the student.
+- Success Response: `200`
 
 ```json
 {
@@ -157,6 +125,4 @@ Code: 200
 }
 ```
 
-Error Response:
-
-Code: `404 NOT FOUND`
+- Error Response: `404 NOT FOUND`

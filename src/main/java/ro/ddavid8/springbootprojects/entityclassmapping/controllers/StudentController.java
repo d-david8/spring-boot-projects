@@ -26,16 +26,37 @@ public class StudentController {
         return ResponseEntity.ok(studentService.createStudent(studentDTO));
     }
 
-    @GetMapping("/students")
-    public ResponseEntity<List<StudentDTO>> getAllStudents() {
-        return ResponseEntity.ok(studentService.getAllStudents());
-    }
-
     @PutMapping("/students/{id}")
     public ResponseEntity<StudentDTO> updateStudentById(@PathVariable @Valid Long id, @RequestBody StudentDTO studentDTO) {
         Optional<StudentDTO> studentDTOResponse = Optional.ofNullable(studentService.updateStudentById(id, studentDTO));
         return studentDTOResponse
                 .map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.badRequest().body(null));
+    }
+
+    @DeleteMapping("/students/{id}")
+    public ResponseEntity<StudentDTO> deleteStudentById(@PathVariable @Valid Long id) {
+        Optional<StudentDTO> studentDTOResponse = Optional.ofNullable(studentService.deleteStudentById(id));
+        return studentDTOResponse
+                .map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.badRequest().body(null));
+    }
+
+    @GetMapping("/students")
+    public ResponseEntity<List<StudentDTO>> findStudentByFirstNameOrLastName(
+            @RequestParam(required = false) String firstName,
+            @RequestParam(required = false) String lastName) {
+        if (firstName == null && lastName == null)
+            return ResponseEntity.ok(studentService.getAllStudents());
+        return ResponseEntity.ok(studentService.getStudentIgnoreCaseByFirstNameOrLastNameIgnoreCase(firstName, lastName));
+    }
+
+    @GetMapping(value = "/students", params = "email")
+    public ResponseEntity<StudentDTO> findStudentByEmail(@RequestParam String email) {
+        Optional<StudentDTO> studentDTO = Optional.ofNullable(studentService.getUserByEmail(email));
+        if (studentDTO.isPresent()) {
+            return ResponseEntity.ok(studentService.getUserByEmail(email));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
 }

@@ -9,6 +9,7 @@ import ro.ddavid8.springbootprojects.entityclassmapping.models.entities.Student;
 import ro.ddavid8.springbootprojects.entityclassmapping.repositories.StudentRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -55,4 +56,39 @@ public class StudentServiceImpl implements StudentService {
         log.info("Student with id: {} was not found", id);
         return null;
     }
+
+    @Override
+    public StudentDTO deleteStudentById(Long id) {
+        Optional<Student> studentEntity = studentRepository.findById(id);
+        if (studentEntity.isPresent()) {
+            StudentDTO studentDTO = objectMapper.convertValue(studentEntity, StudentDTO.class);
+            studentRepository.deleteById(id);
+            log.info("Student with id: {} was deleted", id);
+            return studentDTO;
+        }
+        log.info("Student with id: {} was not found", id);
+        return null;
+    }
+
+    @Override
+    public List<StudentDTO> getStudentIgnoreCaseByFirstNameOrLastNameIgnoreCase(String firstName, String lastName) {
+        List<StudentDTO> studentDTOList;
+        studentDTOList = studentRepository.findByFirstNameIgnoreCaseOrLastNameIgnoreCase(firstName, lastName).stream()
+                .map(studentEntity -> objectMapper.convertValue(studentEntity, StudentDTO.class))
+                .toList();
+        log.info("The list of students with first name = {} or last name = {}, count {} was returned", firstName, lastName, studentDTOList.size());
+
+        return studentDTOList;
+    }
+
+    @Override
+    public StudentDTO getUserByEmail(String email) {
+        Optional<Student> studentEntity = studentRepository.findStudentByEmail(email);
+        if (studentEntity.isPresent())
+            return objectMapper.convertValue(studentEntity, StudentDTO.class);
+        else
+            return null;
+    }
+
+
 }

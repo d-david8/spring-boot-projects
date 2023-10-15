@@ -10,4 +10,10 @@ public interface StudentService {
     List<StudentDTO> getAllStudents();
 
     StudentDTO updateStudentById(Long id, StudentDTO studentDTO);
+
+    StudentDTO deleteStudentById(Long id);
+
+    List<StudentDTO> getStudentIgnoreCaseByFirstNameOrLastNameIgnoreCase(String firstName, String lastName);
+
+    StudentDTO getUserByEmail(String email);
 }

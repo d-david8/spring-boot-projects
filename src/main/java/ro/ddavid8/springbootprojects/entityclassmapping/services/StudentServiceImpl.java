@@ -45,10 +45,10 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public StudentDTO updateStudentById(Long id, StudentDTO studentDTO) {
-        studentDTO.setId(id);
-        Student studentEntity = objectMapper.convertValue(studentDTO, Student.class);
 
-        if (studentRepository.findById(studentDTO.getId()).isPresent()) {
+        if (studentRepository.findById(id).isPresent()) {
+            studentDTO.setId(id);
+            Student studentEntity = objectMapper.convertValue(studentDTO, Student.class);
             Student studentResponseEntity = studentRepository.save(studentEntity);
             log.info("Student with id: {} was updated", studentResponseEntity.getId());
             return objectMapper.convertValue(studentResponseEntity, StudentDTO.class);
@@ -71,13 +71,12 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public List<StudentDTO> getStudentIgnoreCaseByFirstNameOrLastNameIgnoreCase(String firstName, String lastName) {
+    public List<StudentDTO> getAllStudentsByFirstNameOrLastName(String firstName, String lastName) {
         List<StudentDTO> studentDTOList;
         studentDTOList = studentRepository.findByFirstNameIgnoreCaseOrLastNameIgnoreCase(firstName, lastName).stream()
                 .map(studentEntity -> objectMapper.convertValue(studentEntity, StudentDTO.class))
                 .toList();
         log.info("The list of students with first name = {} or last name = {}, count {} was returned", firstName, lastName, studentDTOList.size());
-
         return studentDTOList;
     }
 
@@ -89,6 +88,4 @@ public class StudentServiceImpl implements StudentService {
         else
             return null;
     }
-
-
 }

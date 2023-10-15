@@ -13,7 +13,7 @@ public interface StudentService {
 
     StudentDTO deleteStudentById(Long id);
 
-    List<StudentDTO> getStudentIgnoreCaseByFirstNameOrLastNameIgnoreCase(String firstName, String lastName);
+    List<StudentDTO> getAllStudentsByFirstNameOrLastName(String firstName, String lastName);
 
     StudentDTO getUserByEmail(String email);
 }

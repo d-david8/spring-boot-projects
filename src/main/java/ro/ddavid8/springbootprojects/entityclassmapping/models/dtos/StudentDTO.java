@@ -1,6 +1,7 @@
 package ro.ddavid8.springbootprojects.entityclassmapping.models.dtos;
 
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -13,7 +14,7 @@ public class StudentDTO implements Serializable {
     private String firstName;
     @NotEmpty(message = "Last name cannot be empty!")
     private String lastName;
-    @NotEmpty(message = "Email cannot be empty!")
     private String email;
+    @NotNull(message = "Birth date cannot be empty")
     private LocalDate birthDate;
 }

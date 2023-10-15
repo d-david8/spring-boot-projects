@@ -35,7 +35,24 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<StudentDTO> getAllStudents() {
         List<Student> studentsEntityList = studentRepository.findAll(Sort.by("id"));
+        log.info("The list of students was retrieved, count {}", studentsEntityList.size());
+
         return studentsEntityList.stream()
-                .map(student -> objectMapper.convertValue(student, StudentDTO.class)).toList();
+                .map(studentEntity -> objectMapper.convertValue(studentEntity, StudentDTO.class))
+                .toList();
+    }
+
+    @Override
+    public StudentDTO updateStudentById(Long id, StudentDTO studentDTO) {
+        studentDTO.setId(id);
+        Student studentEntity = objectMapper.convertValue(studentDTO, Student.class);
+
+        if (studentRepository.findById(studentDTO.getId()).isPresent()) {
+            Student studentResponseEntity = studentRepository.save(studentEntity);
+            log.info("Student with id: {} was updated", studentResponseEntity.getId());
+            return objectMapper.convertValue(studentResponseEntity, StudentDTO.class);
+        }
+        log.info("Student with id: {} was not found", id);
+        return null;
     }
 }

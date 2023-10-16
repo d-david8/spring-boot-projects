@@ -1,6 +1,6 @@
-package ro.ddavid8.springbootprojects.entityclassmapping.services;
+package ro.ddavid8.springbootprojects.studentsmanagement.services;
 
-import ro.ddavid8.springbootprojects.entityclassmapping.models.dtos.StudentDTO;
+import ro.ddavid8.springbootprojects.studentsmanagement.models.dtos.StudentDTO;
 
 import java.util.List;
 

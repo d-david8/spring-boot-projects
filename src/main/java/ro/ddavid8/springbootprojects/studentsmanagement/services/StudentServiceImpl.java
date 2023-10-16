@@ -1,12 +1,12 @@
-package ro.ddavid8.springbootprojects.entityclassmapping.services;
+package ro.ddavid8.springbootprojects.studentsmanagement.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import ro.ddavid8.springbootprojects.entityclassmapping.models.dtos.StudentDTO;
-import ro.ddavid8.springbootprojects.entityclassmapping.models.entities.Student;
-import ro.ddavid8.springbootprojects.entityclassmapping.repositories.StudentRepository;
+import ro.ddavid8.springbootprojects.studentsmanagement.models.dtos.StudentDTO;
+import ro.ddavid8.springbootprojects.studentsmanagement.models.entities.Student;
+import ro.ddavid8.springbootprojects.studentsmanagement.repositories.StudentRepository;
 
 import java.util.List;
 import java.util.Optional;

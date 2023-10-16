@@ -1,11 +1,11 @@
-package ro.ddavid8.springbootprojects.entityclassmapping.controllers;
+package ro.ddavid8.springbootprojects.studentsmanagement.controllers;
 
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import ro.ddavid8.springbootprojects.entityclassmapping.models.dtos.StudentDTO;
-import ro.ddavid8.springbootprojects.entityclassmapping.services.StudentService;
+import ro.ddavid8.springbootprojects.studentsmanagement.models.dtos.StudentDTO;
+import ro.ddavid8.springbootprojects.studentsmanagement.services.StudentService;
 
 import java.util.List;
 import java.util.Optional;

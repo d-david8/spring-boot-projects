@@ -1,4 +1,4 @@
-package ro.ddavid8.springbootprojects.entityclassmapping.models.entities;
+package ro.ddavid8.springbootprojects.studentsmanagement.models.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;

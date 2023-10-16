@@ -1,8 +1,8 @@
-package ro.ddavid8.springbootprojects.entityclassmapping.repositories;
+package ro.ddavid8.springbootprojects.studentsmanagement.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import ro.ddavid8.springbootprojects.entityclassmapping.models.entities.Student;
+import ro.ddavid8.springbootprojects.studentsmanagement.models.entities.Student;
 
 import java.util.List;
 import java.util.Optional;

@@ -6,7 +6,7 @@ This api manages operations related to student entities using a PostgreSQL datab
 
 Creates a new student.
 
-- URL: `/api/entityClassMapping/students`
+- URL: `/api/studentsManagement/students`
 - Method: `POST`
 - Request Body:
 
@@ -35,7 +35,7 @@ Creates a new student.
 
 Updates an existing student by ID.
 
-- URL: `/api/entityClassMapping/students/{id}`
+- URL: `/api/studentsManagement/students/{id}`
 - Method: `PUT`
 - Request Body:
 
@@ -65,7 +65,7 @@ Updates an existing student by ID.
 
 Deletes an existing student by ID.
 
-- URL: `/api/entityClassMapping/students/{id}`
+- URL: `/api/studentsManagement/students/{id}`
 - Method: `DELETE`
 - Success Response: `200`
 
@@ -84,7 +84,7 @@ Deletes an existing student by ID.
 
 Finds students by their first name or/and last name.
 
-- URL: `/api/entityClassMapping/students`
+- URL: `/api/studentsManagement/students`
 - Method: `GET`
 - Query Parameters:
     - `firstName` (optional): First name of the student.
@@ -110,7 +110,7 @@ Finds students by their first name or/and last name.
 
 ## 5. Find Student by Email
 
-- URL `/api/entityClassMapping/students/getStudentByEmail`
+- URL `/api/studentsManagement/students/getStudentByEmail`
 - Method: `GET`
 - Query Parameters:
     - `email`: Email address of the student.

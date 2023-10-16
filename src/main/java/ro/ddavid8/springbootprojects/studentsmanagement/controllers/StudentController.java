@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Validated
 @RestController
-@RequestMapping("/api/entityClassMapping")
+@RequestMapping("/api/studentsManagement")
 public class StudentController {
 
     private final StudentService studentService;

@@ -1,4 +1,4 @@
-# spring-project
+# Books Management
 
 This API provides access to a collection of books and offers the following endpoints:
 

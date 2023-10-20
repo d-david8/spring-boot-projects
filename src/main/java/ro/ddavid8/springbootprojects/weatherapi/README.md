@@ -13,6 +13,3 @@ provides a simplified response.
     "lastUpdated": "2023-10-20T09:45:00"
   }
   ```
-  
-
-test

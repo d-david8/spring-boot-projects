@@ -1,5 +1,7 @@
 # spring-boot-projects
 
+### <a href=http://localhost:8080/swagger-ui.html> Swagger </a>  
+
 ### 1. <a href=https://github.com/d-david8/spring-boot-projects/blob/main/src/main/java/ro/ddavid8/springbootprojects/personalizedgreetings/README.md> Personalized Greetings </a>
 
 ### 2. <a href=https://github.com/d-david8/spring-boot-projects/blob/main/src/main/java/ro/ddavid8/springbootprojects/booksmanagement/README.md>Books Management</a>

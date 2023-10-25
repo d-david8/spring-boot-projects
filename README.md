@@ -11,3 +11,5 @@
 ### 5. <a href=https://github.com/d-david8/spring-boot-projects/blob/main/src/main/java/ro/ddavid8/springbootprojects/recipesbook/README.md> Recipes book</a>
 
 ### 6. <a href=https://github.com/d-david8/spring-boot-projects/blob/main/src/main/java/ro/ddavid8/springbootprojects/weatherapi/README.md> Weather API</a>
+
+### 7. <a href=https://github.com/d-david8/spring-boot-projects/blob/main/src/main/java/ro/ddavid8/springbootprojects/sendemail/README.md> Send confirmation email</a>
